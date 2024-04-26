@@ -11,4 +11,4 @@ If you have an account just head to the actions tab and open the run for the ver
 If you don't have an account, use the nightly links from [this gist post](https://gist.github.com/AshOnDiscord/d8c680e695b532464d26ecb3bd0cf943), copy the link for your version, head to it and it'll download the artifacts.  
 Once you have the artifacts just extract it and use the jar.
 
-Last Artifact Build: 1/26/24
+Last Artifact Build: 4/26/24
