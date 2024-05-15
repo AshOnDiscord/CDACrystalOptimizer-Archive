@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[47,)"
+loaderVersion = "[50,)"
 #issueTrackerURL = ""
 license = "MIT"
 
@@ -16,14 +16,14 @@ logoFile = "assets/crystaloptimizer/icon.png"
 [[dependencies.crystaloptimizer]]
 modId = "forge"
 mandatory = true
-versionRange = "[47,)"
+versionRange = "[50,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.crystaloptimizer]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20,1.20.4]"
+versionRange = "[1.20.5,)"
 ordering = "NONE"
 side = "BOTH"
 

@@ -22,11 +22,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Set up JDK 17
+      - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
@@ -40,7 +40,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: artifacts
-          path: build/libs/crystaloptimizer-1.0.0.jar
+          path: fabric/build/libs/crystaloptimizer-fabric-1.0.0.jar
 
       - name: stop daemon
         run: ./gradlew --stop

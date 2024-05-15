@@ -22,9 +22,9 @@
   },
   "mixins": ["crystaloptimizer.mixins.json"],
   "depends": {
-    "fabricloader": ">=0.15.8",
-    "minecraft": ">=1.20 <=1.20.4",
-    "java": ">=17",
+    "fabricloader": ">=0.15.10",
+    "minecraft": ">=1.20.5",
+    "java": ">=21",
     "fabric-api": "*"
   },
   "suggests": {
