@@ -1,11 +1,12 @@
 {
   "required": true,
-  "minVersion": "0.7",
-  "package": "io.github.cdagaming.crystaloptimizer.mixin.forge",
+  "package": "io.github.cdagaming.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
-  ],
+  "minVersion": "0.8",
   "client": [
+  ],
+  "mixins": [
+    "ClientConnectionMixin"
   ],
   "injectors": {
     "defaultRequire": 1

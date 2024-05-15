@@ -2,29 +2,32 @@
   "schemaVersion": 1,
   "id": "crystaloptimizer",
   "version": "${version}",
-  "name": "CrystalOptimizer",
+  "name": "Crystal Optimizer",
   "description": "Optimization that fixes waiting on the server after crystal break before end crystal entities are cleaned.",
-  "authors": [
-    "CDAGaming"
-  ],
+  "authors": ["CDAGaming"],
   "contact": {
     "repo": "https://github.com/CDAGaming/CrystalOptimizer",
     "issues": "https://github.com/CDAGaming/CrystalOptimizer/issues"
   },
   "license": "MIT",
-  "icon": "icon.png",
+  "icon": "assets/crystaloptimizer/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.cdagaming.crystaloptimizer.fabric.CrystalOptimizerFabric"
+      "io.github.cdagaming.fabric.CrystalOptimizerFabric"
+    ],
+    "client": [
+      "io.github.cdagaming.fabric.client.CrystalOptimizerFabricClient"
     ]
   },
-  "mixins": [
-    "crystaloptimizer.mixins.json",
-    "crystaloptimizer-common.mixins.json"
-  ],
+  "mixins": ["crystaloptimizer.mixins.json"],
   "depends": {
-    "fabricloader": ">=0.14.21",
-    "minecraft": "1.20.x"
+    "fabricloader": ">=0.15.8",
+    "minecraft": ">=1.20 <=1.20.4",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
   }
 }
