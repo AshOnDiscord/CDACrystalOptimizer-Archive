@@ -19,6 +19,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.Objects;
+
 @Mixin(Connection.class)
 public class ClientConnectionMixin {
     @Inject(method = "send(Lnet/minecraft/network/protocol/Packet;)V", at = @At("HEAD"))
@@ -38,23 +40,36 @@ public class ClientConnectionMixin {
 
                 @Override
                 public void onAttack() {
+                    boolean verbose = false;
+                    System.out.println("Attack");
                     HitResult hitResult = mc.hitResult;
 
-                    if (hitResult == null) return;
-                    if (hitResult.getType() != HitResult.Type.ENTITY) return;
+                    if (hitResult == null) {
+                        if (verbose) System.out.println("Hit result is null");
+                        return;
+                    };
+                    if (hitResult.getType() != HitResult.Type.ENTITY) {
+                        if (verbose) System.out.println("Hit result is not entity");
+                        return;
+                    }
                     Entity entity = ((EntityHitResult) hitResult).getEntity();
-                    if (!(entity instanceof EndCrystal)) return;
+                    if (!(entity instanceof EndCrystal)) {
+                        if (verbose) System.out.println("Entity is not end crystal");
+                        return;
+                    }
 
                     assert mc.player != null;
                     MobEffectInstance weakness = mc.player.getEffect(MobEffects.WEAKNESS);
                     MobEffectInstance strength = mc.player.getEffect(MobEffects.DAMAGE_BOOST);
-                    if (weakness == null || strength == null) return;
                     boolean hasTool = ClientConnectionMixin.this.isTool(mc.player.getMainHandItem());
-                    if (strength.getAmplifier() <= weakness.getAmplifier() && !hasTool) return;
+                    if (weakness != null && (strength == null || strength.getAmplifier() <= weakness.getAmplifier()) && !hasTool) {
+                        if (verbose) System.out.println("Not strong enough");
+                        return;
+                    }
                     entity.kill();
                     entity.setRemoved(Entity.RemovalReason.KILLED);
                     entity.onClientRemoval();
-                    System.out.println("End crystal removed");
+                    if (verbose) System.out.println("End crystal removed");
                 }
             });
         }
