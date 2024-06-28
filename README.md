@@ -1,5 +1,5 @@
 # Reason for archiving
-As mod loaders update new breaking changes happen and random bugs, some refactors have been made here and there to make updating easier, with the recent large-scale breaking changes, I've decided to just start a few things over (this also removes the numerous filler commits that I've made to trigger reruns). While the underlying logic will be pretty much the same thing, there will be some changes and hence deviate from the below-listed goals (this has already happened for the 1.20 branches). The new fork can be found at https://github.com/AshOnDiscord/CDACrystalOptimizer
+As mod loaders update new breaking changes happen and random bugs, some refactors have been made here and there to make updating easier, with the recent large-scale breaking changes, I've decided to just start from scratch. While the underlying logic will be pretty much the same thing, there will be some changes and hence deviate from the below-listed goals (this has already happened for the 1.20 branches). The new fork can be found at https://github.com/AshOnDiscord/CrystalOptimizer
 
 # CrystalOptimizer
 Fork of CDAGaming's Optimizer which is based of Marlow's.
